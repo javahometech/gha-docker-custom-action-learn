@@ -1,0 +1,11 @@
+name: Docker Action
+description: An example GitHub Action that uses Docker
+inputs:
+  name:
+    description: 'Name to greet'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.name }}

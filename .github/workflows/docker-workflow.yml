@@ -1,0 +1,16 @@
+name: Test Docker Action
+
+on:
+  push:
+
+jobs:
+  run-docker-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run my Docker custom action
+        uses: ./.github/actions/my-docker-action
+        with:
+          name: "Hari"
