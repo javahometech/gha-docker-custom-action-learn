@@ -1,5 +1,4 @@
 name: Test S3 Create Action
-
 on:
   push:
 
@@ -12,6 +11,9 @@ jobs:
 
       - name: Run S3 Create Action
         uses: ./.github/actions/create-s3-bucket
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         with:
           bucket-name: "hari-demo-bucket-12345"
           region: "ap-south-1"
