@@ -1,16 +1,17 @@
-name: Test Docker Action
+name: Test S3 Create Action
 
 on:
   push:
 
 jobs:
-  run-docker-action:
+  create-s3:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run my Docker custom action
-        uses: ./.github/actions/my-docker-action
+      - name: Run S3 Create Action
+        uses: ./.github/actions/create-s3-bucket
         with:
-          name: "Hari"
+          bucket-name: "hari-demo-bucket-12345"
+          region: "ap-south-1"
