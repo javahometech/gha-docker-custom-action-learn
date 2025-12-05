@@ -1,8 +1,8 @@
 import boto3
 import os
 
-bucket_name = os.getenv("BUCKET_NAME")
-region = os.getenv("REGION")
+bucket_name = os.getenv("INPUT_BUCKET-NAME")
+region = os.getenv("INPUT_REGION")
 
 if not bucket_name:
     raise Exception("BUCKET_NAME not provided")
